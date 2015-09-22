@@ -1,3 +1,3 @@
-student.Roster.controller('FieldTripCtrl', function FieldTripsCtrl($scope) {
-  $scope.studentsWithPermision = [{name: Jane Doe}, {name:John Doe}];
+studentRoster.controller('FieldTripsCtrl', function FieldTripsCtrl($scope) {
+  $scope.studentsWithPermission = [{ name: "Jane Doe" }, { name: "John Doe" }];
 });
