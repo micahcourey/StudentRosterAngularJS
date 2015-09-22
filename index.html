@@ -6,6 +6,7 @@
     <script src="app.js"></script>
     <script src="controllers/StudentsController.js"></script>
     <script src="controllers/FieldTripsController.js"></script>
+    <script src="services/StudentsFactory.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
@@ -28,8 +29,8 @@
             <ul>
               <li ng-repeat="item in filtered = (students|filter:query)">
                 <span ng-click="editing = true" ng-hide="editing">
-              {{ item.name }} <a ng-click="deleteStudent(item)">Delete</a>
-              </span>
+                  {{ item.name }} <a ng-click="StudentsFactory.deleteStudent(item)">Delete</a>
+                </span>
               <span class="form-group" ng-show="editing" ng-submit="editing = false">
               <form class="form-inline" role="form">
                 <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required>
@@ -41,9 +42,9 @@
           </div>
           <div class="col-md-4">
             <h2>New Student</h2>
-            <form ng-submit="addStudent()" class="form-inline">
+            <form ng-submit="StudentsFactory.addStudent()" class="form-inline" role="form">
               <div class="form-group">
-                <input type="text" ng-model="studentName" class="form-control" placeholder="Enter name">
+                <input type="text" ng-model="StudentsFactory.studentName" class="form-control" placeholder="Enter name">
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
